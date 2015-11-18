@@ -7,8 +7,8 @@
  */
 
 /*global require, module, process, setInterval*/
-
-console.log("bms-monitoring-sdk-node initialized :: v" + process.env.npm_package_version);
+var packageVersion = require('./package.json').version;
+console.log("bms-monitoring-sdk-node initialized :: v" + packageVersion);
 
 var logger = require('./logger.js');
 var utils = require('./utils.js');
