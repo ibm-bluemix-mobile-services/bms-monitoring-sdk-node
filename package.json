@@ -1,0 +1,26 @@
+{
+  "name": "bms-monitoring-sdk-node",
+  "version": "1.0.1",
+  "description": "Monitoring SDK for Bluemix Mobile Services (node.js)",
+  "main": "analytics-sdk-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibm-bluemix-mobile-services/bms-monitoring-sdk-node.git"
+  },
+  "keywords": [
+    "bluemix",
+    "mobile",
+    "services",
+    "mobilefirst",
+    "monitoring"
+  ],
+  "author": "Anton Aleksandrov",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ibm-bluemix-mobile-services/bms-monitoring-sdk-node/issues"
+  },
+  "homepage": "https://github.com/ibm-bluemix-mobile-services/bms-monitoring-sdk-node#readme"
+}
