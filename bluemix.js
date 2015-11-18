@@ -194,6 +194,13 @@ function _setupBlueMixMode(emitter, settings, logger, utils, https, url) {
         callback(eventTypes);
       };
 
+      // Update undefined values in headers to empty strings
+      for (var key in options.headers){
+        if (!options.headers[key])
+          //options.headers[key]="";
+        delete options.headers[key];
+      }
+
       var respConsumerCallback = utils.responseConsumer(logger, 'getting event types', 200, failureCallback ? failureCallback : emitter, respCallback);
 
       var request = https.get(options, respConsumerCallback);
