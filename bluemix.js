@@ -91,22 +91,15 @@ function _setupBlueMixMode(emitter, settings, logger, utils, https, url) {
     vcapServices = JSON.parse(process.env.VCAP_SERVICES);
 
     // Cycle through all bound services and look for elasticsearch.
-    for (var key in vcapServices) {
-      if (vcapServices.hasOwnProperty(key)) {
-  
-        var fullInfo;
-  
-        if (key.indexOf('AESearch') === 0) {
-  
-          // If we are bound to the analytics elasticsearch service,
-          // the SDK will be running in elasticsearch mode.
-          logger.log('Bound to Analytics Elasticsearch service.  SDK will use Elasticsearch.');
-  
-          fullInfo = vcapServices[key][0];
-  
-          if (fullInfo.credentials) {
-            esCredentials = fullInfo.credentials;
-          }
+    for (var key in vcapServices['user-provided']) {
+      var fullInfo;
+      if (vcapServices['user-provided'][key].name.indexOf('AESearch') === 0) {
+        // If we are bound to the analytics elastic search service,
+        // the SDK will be running in elasticsearch mode.
+        logger.log('Bound to Analytics Elasticsearch service.  SDK will use Elasticsearch.');
+        fullInfo = vcapServices[key][0];
+        if (fullInfo.credentials) {
+          esCredentials = fullInfo.credentials;
         }
       }
     }
