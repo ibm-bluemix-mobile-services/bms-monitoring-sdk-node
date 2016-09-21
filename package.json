@@ -1,6 +1,6 @@
 {
   "name": "bms-monitoring-sdk-node",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Monitoring SDK for Bluemix Mobile Services (node.js)",
   "main": "analytics-sdk-node.js",
   "scripts": {
@@ -18,6 +18,9 @@
     "monitoring"
   ],
   "author": "Anton Aleksandrov",
+  "contributors": [
+    "Nana Amfo <nanaus13@gmail.com>"
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/ibm-bluemix-mobile-services/bms-monitoring-sdk-node/issues"
