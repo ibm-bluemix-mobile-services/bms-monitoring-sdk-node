@@ -93,11 +93,11 @@ function _setupBlueMixMode(emitter, settings, logger, utils, https, url) {
     // Cycle through all bound services and look for elasticsearch.
     for (var key in vcapServices['user-provided']) {
       var fullInfo;
-      if (vcapServices['user-provided'][key].name.indexOf('AESearch') === 0) {
+      if (vcapServices['user-provided'][key].name && vcapServices['user-provided'][key].name.indexOf('AESearch') === 0) {
         // If we are bound to the analytics elastic search service,
         // the SDK will be running in elasticsearch mode.
         logger.log('Bound to Analytics Elasticsearch service.  SDK will use Elasticsearch.');
-        fullInfo = vcapServices[key][0];
+        fullInfo = vcapServices['user-provided'][key];
         if (fullInfo.credentials) {
           esCredentials = fullInfo.credentials;
         }
